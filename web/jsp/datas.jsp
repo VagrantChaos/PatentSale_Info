@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="../css/datas.css">
 </head>
 <body>
 <div class="col-lg-12">
