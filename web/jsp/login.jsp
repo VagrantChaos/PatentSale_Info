@@ -19,6 +19,9 @@
     <form action="http://localhost:8080/Wed/login" method="post">
         <input name="usr" type="text"><br>
         <input name="psd" type="password"><br>
+        <input name="check_code" type="text">
+        <img src="/Wed/CheckServlet"> <br>
+
         <input value="login" type="submit"><br>
     </form>
 

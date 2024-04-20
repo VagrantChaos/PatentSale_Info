@@ -1,5 +1,7 @@
 package com.cc.servlet;
 
+import com.cc.domain.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,14 +24,22 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
         String usr = req.getParameter("usr");
         String psd = req.getParameter("psd");
-
-        if(psd.equals(users.get(usr))){
-            req.setAttribute("usr",usr);
-            resp.sendRedirect("/Wed/index.jsp");
+        String checkCode = req.getParameter("check_code");
+        String savedCode = (String) req.getSession().getAttribute("check_code");
+        if(psd.equals(users.get(usr))&& checkCode.equals(savedCode)){
+            User user = new User();
+            user.setUsername(usr);
+            user.setPassword(psd);
+            req.getSession().setAttribute("user",user);
+//            resp.sendRedirect("/Wed/index.jsp");
+            resp.sendRedirect("/Wed/hello");
+        }else if (checkCode.equals(savedCode)){
+            resp.getWriter().println("密码错误");
         }else {
-            resp.sendRedirect("/Wed/");
+            resp.getWriter().println("验证码错误");
         }
     }
 }

@@ -1,22 +1,31 @@
 package com.cc.servlet;
 
+import com.cc.domain.User;
+
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Hello extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setHeader("Refresh","2");
+//        resp.setHeader("Refresh","2");
         String data = "Hello";
         resp.setContentType("text/html;charset=utf-8");
-        PrintWriter out = resp.getWriter();
-        out.println(data);
-        out.println("your data:"+req.getParameter("data"));
-        out.println("<hr>");
-        out.println("<hr>");
+        HttpSession session = req.getSession();
+        User user = (User)session.getAttribute("user");
+        if(user == null){
+            resp.getWriter().println("please login<a href='/Wed/jsp/login.jsp'>登录</a>");
+        }else {
+            resp.getWriter().println(data+user.getUsername());
+            /*
+            Cookie cookie = new Cookie("", session.getId());
+            cookie.setMaxAge(60*30);
+            cookie.setPath("/");
+            resp.addCookie(cookie);
+            */
+        }
+
+
     }
 }
