@@ -1,8 +1,8 @@
 package com.cc.domain;
 
 public class User {
-    String username;
-    String password;
+    private String username;
+    private String password;
 
     public User() {
     }
