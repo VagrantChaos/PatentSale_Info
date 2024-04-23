@@ -27,19 +27,19 @@ public class LoginServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         String usr = req.getParameter("usr");
         String psd = req.getParameter("psd");
-        String checkCode = req.getParameter("check_code");
-        String savedCode = (String) req.getSession().getAttribute("check_code");
-        if(psd.equals(users.get(usr))&& checkCode.equals(savedCode)){
+        String checkCode = req.getParameter("checkCode");
+        String rightCode = (String) req.getSession().getAttribute("rightCode");
+
+        if (!checkCode.equals(rightCode)){
+            resp.getWriter().println("<script language='javascript'>alert('验证码错误');window.location.href='/Wed';</script>");
+        }else if (!psd.equals(users.get(usr))){
+            resp.getWriter().println("<script language='javascript'>alert('用户名或密码错误');window.location.href='/Wed';</script>");
+        }else {
             User user = new User();
             user.setUsername(usr);
             user.setPassword(psd);
             req.getSession().setAttribute("user",user);
-//            resp.sendRedirect("/Wed/index.jsp");
-            resp.sendRedirect("/Wed/hello");
-        }else if (checkCode.equals(savedCode)){
-            resp.getWriter().println("密码错误");
-        }else {
-            resp.getWriter().println("验证码错误");
+            resp.sendRedirect("/Wed/index.jsp");
         }
     }
 }

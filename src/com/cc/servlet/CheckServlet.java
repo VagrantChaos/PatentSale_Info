@@ -39,7 +39,7 @@ public class CheckServlet extends HttpServlet {
         sos.write(buf);
         bos.close();
         sos.close();
-        session.setAttribute("check_code", new String(rands));
+        session.setAttribute("rightCode", new String(rands));
 
     }
 

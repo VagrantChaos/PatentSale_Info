@@ -9,21 +9,22 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="../css/login.css" rel="stylesheet"/>
 </head>
 <body>
-<%--登录界面的背景图--%>
-<%--<script>--%>
-<%--    $.backstretch("img/login-bg.jpg", {speed: 500});--%>
-<%--</script>--%>
-    <form action="http://localhost:8080/Wed/login" method="post">
-        <input name="usr" type="text"><br>
-        <input name="psd" type="password"><br>
-        <input name="check_code" type="text">
-        <img src="/Wed/CheckServlet"> <br>
+<main>
 
-        <input value="login" type="submit"><br>
+    <form action="http://localhost:8080/Wed/login" method="post" style="width:320px;margin: 0 auto;padding: 20% 20%">
+        <div>
+            <h1>Sign in to the IS</h1>
+            <label>username:</label><input name="usr" type="text" style="height: 30px;margin: 10px"><br>
+            <label>password:</label><input name="psd" type="password" style="height: 30px;margin: 10px"><br>
+            <label>验证码:</label><input name="checkCode" type="text" style="height: 30px;margin: 10px">
+            <img src="/Wed/CheckServlet"> <br>
+            <input value="login" type="submit" style="height: 30px;margin: 10px;width: 300px"><br>
+        </div>
     </form>
+</main>
+
 
 </body>
 </html>

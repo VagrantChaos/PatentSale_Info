@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class SalesService {
 //    这里处理所有的curd函数
     public String keys = "PatentID,CertificateNumber,PatentName,CompleteDate,BlongOrganization,ContactPerson,Phone,SaleMoney,Dollar,YearsValid,SaleDate,Organization,Nation,Delegate,ContactMan,InSpectOrg,Conlusion,Inspector,DateInspect";
-    public ArrayList<Sales> GetAllBooks()
+    public ArrayList<Sales> GetAllSales()
     {
         ArrayList<Sales> al=new ArrayList<>();
         ArrayList<String> va = new ArrayList<>();

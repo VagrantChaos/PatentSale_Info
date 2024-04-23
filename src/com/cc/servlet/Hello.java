@@ -31,7 +31,7 @@ public class Hello extends HttpServlet {
 
         resp.setContentType("text/html;charset=utf-8");
         SalesService ss = new SalesService();
-        ArrayList<Sales> al = ss.GetAllBooks();
+        ArrayList<Sales> al = ss.GetAllSales();
         for (Sales a : al){
             resp.getWriter().println(a.getId());
             resp.getWriter().println("  "+a.getName());
@@ -52,6 +52,7 @@ public class Hello extends HttpServlet {
             resp.getWriter().println("  "+a.isConclusion());
             resp.getWriter().println("  "+a.getInspector());
             resp.getWriter().println("  "+a.getDateInspect().toString());
+            resp.getWriter().println("<br>");
         }
     }
 }
