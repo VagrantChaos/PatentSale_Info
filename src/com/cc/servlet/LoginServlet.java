@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
             user.setUsername(usr);
             user.setPassword(psd);
             req.getSession().setAttribute("user",user);
-            resp.sendRedirect("/Wed/index.jsp");
+            resp.sendRedirect("/Wed/jsp/index.jsp");
         }
     }
 }

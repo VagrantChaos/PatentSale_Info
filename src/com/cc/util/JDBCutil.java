@@ -79,9 +79,7 @@ public class JDBCutil {
         }
     }
 
-    public static void executeUpdate(String sql,String []parameters)
-    {
-
+    public static void executeUpdate(String sql,String []parameters) {
         try {
             connection=getConnection();
             ps=connection.prepareStatement(sql);

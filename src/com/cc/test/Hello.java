@@ -1,4 +1,4 @@
-package com.cc.servlet;
+package com.cc.test;
 
 import com.cc.domain.Sales;
 import com.cc.service.SalesService;
@@ -31,7 +31,7 @@ public class Hello extends HttpServlet {
 
         resp.setContentType("text/html;charset=utf-8");
         SalesService ss = new SalesService();
-        ArrayList<Sales> al = ss.GetAllSales();
+        ArrayList<Sales> al = ss.getAllSales();
         for (Sales a : al){
             resp.getWriter().println(a.getId());
             resp.getWriter().println("  "+a.getName());

@@ -7,16 +7,99 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/*这是处理和数据库之间的操作，再加上数据处理吧
+ *增：
+ *  addSale
+ *删：
+ *  delSale
+ *改：
+ *  updateSale
+ *查：
+ *  getall
+ *  getbyname
+ *  getbyid
+ * */
+//    public String keys = "PatentID,CertificateNumber,PatentName,CompleteDate,BlongOrganization,ContactPerson,Phone,SaleMoney,Dollar,YearsValid,SaleDate,Organization,Nation,Delegate,ContactMan,InSpectOrg,Conlusion,Inspector,DateInspect";
 public class SalesService {
-//    这里处理所有的curd函数
-    public String keys = "PatentID,CertificateNumber,PatentName,CompleteDate,BlongOrganization,ContactPerson,Phone,SaleMoney,Dollar,YearsValid,SaleDate,Organization,Nation,Delegate,ContactMan,InSpectOrg,Conlusion,Inspector,DateInspect";
-    public ArrayList<Sales> GetAllSales()
-    {
-        ArrayList<Sales> al=new ArrayList<>();
+
+    private ArrayList<Sales> result =new ArrayList<>();
+    private boolean isOK =true;
+    // 获取所有数据
+    public ArrayList<Sales> getAllSales() {
         ArrayList<String> va = new ArrayList<>();
         String sql="select * from `patentsaleinfo` ";
         String[] parameters={};
-        ResultSet rs= JDBCutil.executeQuery(sql, parameters);
+        result = doPack(sql, parameters);
+        return result;
+    }
+    // id查询
+    public ArrayList<Sales> getByID(String id){
+        String sql="select * from patentsaleinfo where PatentID=?";
+        String[] parameters={id};
+        result = doPack(sql, parameters);
+        return result;
+    }
+    // name查询
+    public ArrayList<Sales> getByName(String name){
+        String sql="select * from patentsaleinfo where PatentName like ?";
+        String[] parameters={"%"+name+"%"};
+        result = doPack(sql, parameters);
+        return result;
+    }
+
+    public boolean addSale(Sales sales){//
+        boolean b=true;
+        String sql="insert into patentsaleinfo(PatentID,CertificateNumber,PatentName,CompleteDate,BlongOrganization,ContactPerson,Phone,SaleMoney,Dollar,YearsValid,SaleDate,Organization,Nation,Delegate,ContactMan,InSpectOrg,Conlusion,Inspector,DateInspect) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";//
+        String[] parameters={
+                sales.getId(),
+                sales.getNumber(),
+                sales.getName(),
+                sales.getCDate(),
+                sales.getBelOrganization(),
+                sales.getContactPerson(),
+                sales.getPhone(),
+                sales.getRmb()+"",
+                sales.getRmb()*7+"",
+                sales.getYears()+"",
+                sales.getSaleDate()+"",
+                sales.getOrganization(),
+                sales.getNation(),
+                sales.getDelegate(),
+                sales.getInSpectOrg(),
+                sales.isConclusion()+"",
+                sales.getInspector(),
+                sales.getDateInspect()+""};
+        //String parameters[]={user.getUserName(),user.getSex(),user.getMobilePhone(),user.getGrade(),user.getPassword()};
+        try {
+            JDBCutil.executeUpdate(sql, parameters);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+            b=false;
+        }
+        return b;
+    }
+    public  boolean delSale(String Id){
+        String sql="delete from patentsaleinfo where PatentID=?";
+        String parameters[]={Id};
+        try {
+            JDBCutil.executeUpdate(sql, parameters);
+        } catch (Exception e) {
+            e.printStackTrace();
+            isOK =false;
+        }
+        return isOK;
+    }
+    public boolean updateSale(){
+        return true;
+    }
+
+
+
+    //    查询操作的分装都可以用这个
+    public ArrayList<Sales> doPack(String sql, String[] parameters){
+        ArrayList<Sales> saless = new ArrayList<>();
+        ResultSet rs=JDBCutil.executeQuery(sql, parameters);
         try {
             while(rs.next())
             {
@@ -41,12 +124,11 @@ public class SalesService {
                 sales.setConclusion(rs.getBoolean(17));
                 sales.setInspector(rs.getString(18));
                 sales.setDateInspect(rs.getDate(19));
-                al.add(sales);
+                saless.add(sales);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return al;
+        return saless;
     }
 }
