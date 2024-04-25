@@ -11,28 +11,7 @@
 <html>
 <head>
     <title>PatentSaleInfo</title>
-    <style>
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        li {
-            padding: 30px 3px;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-    </style>
+    <link type="text/css" rel="stylesheet" href="../css/common.css">
 </head>
 <body>
 <section>
