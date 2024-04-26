@@ -5,7 +5,9 @@ import com.cc.util.JDBCutil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /*这是处理和数据库之间的操作，再加上数据处理吧
  *增：
@@ -48,9 +50,9 @@ public class SalesService {
     }
 
     public boolean addSale(Sales sales){//
-        boolean b=true;
-        String sql="insert into patentsaleinfo(PatentID,CertificateNumber,PatentName,CompleteDate,BlongOrganization,ContactPerson,Phone,SaleMoney,Dollar,YearsValid,SaleDate,Organization,Nation,Delegate,ContactMan,InSpectOrg,Conlusion,Inspector,DateInspect) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";//
-        String[] parameters={
+        boolean b = true;
+        String sql = "insert into patentsaleinfo(PatentID, CertificateNumber, PatentName, CompleteDate, BlongOrganization, ContactPerson, Phone, SaleMoney, Dollar, YearsValid, SaleDate, Organization, Nation, Delegate, ContactMan, InSpectOrg, Conlusion, Inspector, DateInspect) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String[] parameters = {
                 sales.getId(),
                 sales.getNumber(),
                 sales.getName(),
@@ -58,26 +60,31 @@ public class SalesService {
                 sales.getBelOrganization(),
                 sales.getContactPerson(),
                 sales.getPhone(),
-                sales.getRmb()+"",
-                sales.getRmb()/7.25+"",
-                sales.getYears()+"",
-                sales.getSaleDate()+"",
+                String.valueOf(sales.getRmb()),
+                String.valueOf(sales.getDollar()),
+                String.valueOf(sales.getYears()),
+                formatDate(sales.getSaleDate()),
                 sales.getOrganization(),
                 sales.getNation(),
                 sales.getDelegate(),
+                sales.getContactMan(),
                 sales.getInSpectOrg(),
-                sales.isConclusion()+"",
+                sales.isConclusion()?"1":"0",
                 sales.getInspector(),
-                sales.getDateInspect()+""};
-        //String parameters[]={user.getUserName(),user.getSex(),user.getMobilePhone(),user.getGrade(),user.getPassword()};
+                formatDate(sales.getDateInspect())
+        };
+        System.out.println(sales);
         try {
             JDBCutil.executeUpdate(sql, parameters);
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
-            b=false;
+            b = false;
         }
         return b;
+    }
+    private String formatDate(Date date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return (date != null) ? dateFormat.format(date) : null;
     }
     public  boolean delSale(String Id){
         String sql="delete from patentsaleinfo where PatentID=?";

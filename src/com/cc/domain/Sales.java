@@ -25,26 +25,7 @@ public class Sales {
 
     public Sales() {
     }
-    public Sales(String id, String number, String name, String cDate, String belOrganization, String contactPerson, String phone, double rmb, double dollar, int years, Date saleDate, String organization, String nation, String delegate, String inSpectOrg, boolean conclusion, String inspector, Date dateInspect) {
-        this.id = id;
-        this.number = number;
-        this.name = name;
-        this.cDate = cDate;
-        this.belOrganization = belOrganization;
-        this.contactPerson = contactPerson;
-        this.phone = phone;
-        this.rmb = rmb;
-        this.dollar = dollar;
-        this.years = years;
-        this.saleDate = saleDate;
-        this.organization = organization;
-        this.nation = nation;
-        this.delegate = delegate;
-        this.inSpectOrg = inSpectOrg;
-        this.conclusion = conclusion;
-        this.inspector = inspector;
-        this.dateInspect = dateInspect;
-    }
+
 
     public Sales(String id, String number, String name, String cDate, String belOrganization, String contactPerson, String phone, double rmb, double dollar, int years, Date saleDate, String organization, String nation, String delegate, String contactMan, String inSpectOrg, boolean conclusion, String inspector, Date dateInspect) {
         this.id = id;

@@ -16,76 +16,66 @@ import java.util.Date;
 public class AddServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
 
-        response.setContentType("text/html");
-        SalesService ss = new SalesService();
-        Sales sales = new Sales();
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String id = request.getParameter("id");
         String number = request.getParameter("number");
         String name = request.getParameter("name");
-        String cDate = request.getParameter("cDate");
+        String startDateString = request.getParameter("startDate");
+        String endDateString = request.getParameter("endDate");
+        String cDate = startDateString+"-"+endDateString;
         String belOrganization = request.getParameter("belOrganization");
         String contactPerson = request.getParameter("contactPerson");
         String phone = request.getParameter("phone");
         double rmb = Double.parseDouble(request.getParameter("rmb"));
-//        double dollar = Double.parseDouble(request.getParameter("dollar"));
+        double dollar = Double.parseDouble(request.getParameter("dollar"));
         int years = Integer.parseInt(request.getParameter("years"));
-        try {
-            Date saleDate = dateFormat.parse(request.getParameter("saleDate"));
-            sales.setSaleDate(saleDate);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
+        String saleDateString = request.getParameter("saleDate");
         String organization = request.getParameter("organization");
         String nation = request.getParameter("nation");
         String delegate = request.getParameter("delegate");
         String contactMan = request.getParameter("contactMan");
         String inSpectOrg = request.getParameter("inSpectOrg");
-        boolean conclusion = Boolean.parseBoolean(request.getParameter("conclusion"));
+        boolean conclusion = request.getParameter("conclusion") != null;
         String inspector = request.getParameter("inspector");
+        String dateInspectString = request.getParameter("dateInspect");
+
+        // 将日期字符串转换为 Date 对象
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date saleDate = null;
+        Date dateInspect = null;
         try {
-            Date dateInspect = dateFormat.parse(request.getParameter("dateInspect"));
-            sales.setDateInspect(dateInspect);
+            saleDate = dateFormat.parse(saleDateString);
+            dateInspect = dateFormat.parse(dateInspectString);
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
-        sales.setId(id);
-        sales.setNumber(number);
-        sales.setName(name);
-        sales.setCDate(cDate);
-        sales.setBelOrganization(belOrganization);
-        sales.setContactPerson(contactPerson);
-        sales.setPhone(phone);
-        sales.setRmb(rmb);
-        sales.setDollar(rmb*7);// TODO
-        sales.setYears(years);
-        sales.setOrganization(organization);
-        sales.setNation(nation);
-        sales.setDelegate(delegate);
-        sales.setContactMan(contactMan);
-        sales.setInSpectOrg(inSpectOrg);
-        sales.setConclusion(conclusion);
-        sales.setInspector(inspector);
-
-//        int count = ss.GetCountOfBookByID(bookID);
-//        if (count == 0) {
-//            // 添加书
-//            ss.addSale(Sales);
-//
-//            // 得到刚刚添加的新书
-//            sales = ss.CheckBook(sales);
-//
-//            request.getSession().setAttribute("updateBook", sales);
-//            response.sendRedirect("/Book/jsp/update.jsp");
-//        } else {
-//            request.setAttribute("ExpAddError", "图书:'"+bookID+"'已存在，请重新输入！");
-//            request.setAttribute("updateBook", sales);
-//            request.getRequestDispatcher("/jsp/AddBook.jsp").forward(request,
-//                    response);
-//        }
+        Sales sales = new Sales(
+                id,
+                number,
+                name,
+                cDate,
+                belOrganization,
+                contactPerson,
+                phone,
+                rmb,
+                dollar,
+                years,
+                saleDate,
+                organization,
+                nation,
+                delegate,
+                contactMan,
+                inSpectOrg,
+                conclusion,
+                inspector,
+                dateInspect
+        );
+        SalesService ss = new SalesService();
+        ss.addSale(sales);// TODO: 没加进怎么办，先获取数据库看有没有
+        response.sendRedirect("/Wed/jsp/add.jsp");
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)

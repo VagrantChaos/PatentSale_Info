@@ -9,19 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcc25990-8485-4d5e-bb7e-9a0f220735c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b3b22c6-9720-4fe5-81c4-ea418f30cc4d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b3b22c6-9720-4fe5-81c4-ea418f30cc4d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b3b22c6-9720-4fe5-81c4-ea418f30cc4d/storage_v2/_src_/schema/management.Q3i2lA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b3b22c6-9720-4fe5-81c4-ea418f30cc4d/storage_v2/_src_/schema/management.Q3i2lA.meta" afterDir="false" />
+    <list default="true" id="bcc25990-8485-4d5e-bb7e-9a0f220735c8" name="Changes" comment="除了add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cc/domain/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/domain/Sales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cc/service/SalesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/service/SalesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/util/JDBCutil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/util/JDBCutil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/AddServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/add.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/add.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test/common.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/common.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +250,9 @@
       <workItem from="1714049105970" duration="5261000" />
       <workItem from="1714114256696" duration="5284000" />
       <workItem from="1714132895515" duration="1003000" />
-      <workItem from="1714133920731" duration="1316000" />
+      <workItem from="1714133920731" duration="5118000" />
+      <workItem from="1714139851281" duration="1242000" />
+      <workItem from="1714149507617" duration="7134000" />
     </task>
     <task id="LOCAL-00001" summary="完成登录的简单处理">
       <option name="closed" value="true" />
