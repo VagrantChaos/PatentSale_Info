@@ -50,8 +50,7 @@ public class JDBCutil {
         }
     }
 
-    public static Connection getConnection()
-    {
+    public static Connection getConnection() {
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
@@ -98,8 +97,7 @@ public class JDBCutil {
             release(ps,connection);
         }
     }
-    public static ResultSet executeQuery(String sql,String []parameters)
-    {
+    public static ResultSet executeQuery(String sql,String []parameters) {
         try {
             connection=getConnection();
             ps=connection.prepareStatement(sql);

@@ -59,7 +59,7 @@ public class SalesService {
                 sales.getContactPerson(),
                 sales.getPhone(),
                 sales.getRmb()+"",
-                sales.getRmb()*7+"",
+                sales.getRmb()/7.25+"",
                 sales.getYears()+"",
                 sales.getSaleDate()+"",
                 sales.getOrganization(),

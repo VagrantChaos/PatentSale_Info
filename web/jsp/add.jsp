@@ -10,10 +10,11 @@
 <head>
     <title>add</title>
     <link type="text/css" rel="stylesheet" href="../css/add.css">
+    <link type="text/css" rel="stylesheet" href="../css/common.css">
     <script src="../js/add.js"></script>
 </head>
 <body>
-<header style="background-color: #fff;position: fixed;left: 0;right: 0;top:0;min-height: 60px;padding: 0 10px;border-bottom: 1px solid #f1f2f7">
+<header style="background-color: #fff;position: fixed;left: 0;right: 0;top: 0;min-height: 60px;padding: 0 10px;border-bottom: 1px solid #f1f2f7">
     <div>
         <input type="button" value="=" style="padding-left: 20px;border: white;background-color: white;min-height: 60px;min-width: 60px;font-size: xx-large" onclick="if('none'==(document.getElementById('sidebar').style.display)){document.getElementById('sidebar').style.display='block';document.getElementById('main').style.marginLeft='180px'}else {document.getElementById('sidebar').style.display='none';document.getElementById('main').style.marginLeft='0px'}">
         <a href="index.jsp" style="margin-left: 80px;">Home</a>
@@ -44,7 +45,7 @@
     </div>
 </aside>
 <main id="main" style="margin-left: 180px;">
-    <div style="height: 65px"></div>
+    <div style="height: 45px"></div>
     <h1 style="text-align: center">新增</h1>
     <form name="dataForm" action="AddDataServlet" method="post" onsubmit="return validateForm()">
         <div class="form-group">

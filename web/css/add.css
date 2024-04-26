@@ -1,12 +1,5 @@
-a {
-    text-decoration: none;
-    color: inherit;
-}
-li {
-    padding: 30px 3px;
-}
 body {
-    font-family: Arial, sans-serif;
+    /*font-family: Arial, sans-serif;*/
     padding: 20px;
     background-color: #f4f4f4;
 }
