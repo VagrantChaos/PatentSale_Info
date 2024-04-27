@@ -1,6 +1,5 @@
 package com.cc.service;
 
-import com.cc.domain.User;
 import com.cc.util.JDBCutil;
 
 import java.sql.ResultSet;

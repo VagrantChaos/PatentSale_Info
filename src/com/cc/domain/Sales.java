@@ -211,6 +211,7 @@ public class Sales {
 
     /**
      * 获取
+     *
      * @return saleDate
      */
     public Date getSaleDate() {

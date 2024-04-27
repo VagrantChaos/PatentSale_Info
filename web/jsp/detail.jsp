@@ -9,10 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Update</title>
+    <title>Detail</title>
     <link type="text/css" rel="stylesheet" href="../css/common.css">
     <link type="text/css" rel="stylesheet" href="../css/add.css">
     <script type="text/javascript" src="../js/add.js"></script>
+
 </head>
 <body>
 <jsp:include page="common.jsp"></jsp:include>
@@ -37,12 +38,11 @@
 %>
 <main id="main" style="margin-left: 180px;">
     <div style="height: 45px"></div>
-    <h1 style="text-align: center">修改</h1>
-    <form name="dataForm" id="dataForm" action="/Wed/update?type=update" onsubmit="return confirmSubmit()" method="post">
+    <h1 style="text-align: center">详情</h1>
+    <form name="dataForm" id="dataForm" action="/Wed/update?type=update"  method="post">
         <div class="form-group">
             <label>ID:</label>
-            <input type="text" name="id" id="ID" value="<%=sales!=null?sales.getId():""%>" readonly
-                   style="background-color: #f1f2f7"
+            <input type="text" name="id" id="ID" value="<%=sales!=null?sales.getId():""%>"
                    required pattern="[0-9]+"
                    oninvalid="this.setCustomValidity('id只能是数字')"
                    oninput="this.setCustomValidity('')">
@@ -179,13 +179,22 @@
             <label>Conclusion:</label>
             允许<input type="checkbox" name="conclusion" id="conclusion" style="transform: scale(1.5);margin-left: 50px">
         </div>
-        <input type="submit" value="Update" style="width: 60%;margin-left: 25%;margin-top: 30px"  onsubmit="return confirmSubmit()">
     </form>
-    </main>
+</main>
 </div>
 <script>
     var checkbox = document.getElementById("conclusion");
     checkbox.checked =<%=sales!=null?sales.isConclusion():""%>;
+
+    var inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type !== "checkbox") {
+            inputs[i].readOnly = true;
+        } else {
+            inputs[i].disabled = true;
+        }
+    }
+
 </script>
 </body>
 </html>

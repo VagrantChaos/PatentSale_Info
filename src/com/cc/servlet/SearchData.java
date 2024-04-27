@@ -1,6 +1,6 @@
 package com.cc.servlet;
 
-import com.cc.domain.Sales;
+import com.cc.domain.User;
 import com.cc.service.SalesService;
 
 import javax.servlet.ServletException;
@@ -14,9 +14,17 @@ public class SearchData extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=utf-8");
+        try {
+            User user = (User) req.getSession().getAttribute("user");
+        }catch (Exception e){
+            resp.getWriter().println("<h1 style='text-align:center;color: pink;padding-top:80px;'>请登录</h1>");
+            resp.getWriter().println("<h1 style='text-align:center;color: lightpink;padding-top:80px;'>请登录</h1>");
+            resp.getWriter().println("<h1 style='text-align:center;color: lightpink;padding-top:80px;'>请登录</h1>");
+            resp.getWriter().println("<h1 style='text-align:center;color: lightblue;padding-top:80px;'>请登录</h1>");
+        }
         SalesService ss = new SalesService();
         String type = req.getParameter("type");
-        ArrayList<Sales> result;
+        ArrayList<com.cc.domain.Sales> result;
 
         if (type==null){
             resp.getWriter().println("<h1 style='text-align:center;color: pink;padding-top:80px;'>请求参数错误</h1>");
@@ -26,7 +34,7 @@ public class SearchData extends HttpServlet {
         }
         if("all".equals(type)){
             result = ss.getAllSales();
-            req.getSession().setAttribute("result",result);
+            req.getSession().setAttribute("allresult",result);
 //            req.getSession().setAttribute("ison","all");
             resp.sendRedirect("/Wed/jsp/all.jsp");
         }

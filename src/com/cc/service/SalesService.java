@@ -73,7 +73,7 @@ public class SalesService {
                 sales.getInspector(),
                 formatDate(sales.getDateInspect())
         };
-        System.out.println(sales);
+//        System.out.println(sales);
         try {
             JDBCutil.executeUpdate(sql, parameters);
         } catch (Exception e) {
@@ -97,8 +97,51 @@ public class SalesService {
         }
         return isOK;
     }
-    public boolean updateSale(){
-        return true;
+    public boolean updateSale(Sales sales){
+        boolean b = true;
+        String sql="UPDATE patentsaleinfo\n" +
+                "SET PatentName = ?,\n" +
+                "    CompleteDate = ?,\n" +
+                "    BlongOrganization = ?,\n" +
+                "    ContactPerson = ?,\n" +
+                "    Phone = ?,\n" +
+                "    SaleMoney = ?,\n" +
+                "    Dollar = ?,\n" +
+                "    YearsValid = ?,\n" +
+                "    SaleDate = ?,\n" +
+                "    Organization = ?,\n" +
+                "    Nation = ?,\n" +
+                "    Delegate = ?,\n" +
+                "    ContactMan = ?,\n" +
+                "    InSpectOrg = ?,\n" +
+                "    Conlusion = ?,\n" +
+                "    Inspector = ?,\n" +
+                "    DateInspect = ?\n" +
+                "WHERE PatentID = ?;";
+        String[] params = {sales.getName(),
+        sales.getCDate(),
+        sales.getBelOrganization(),
+        sales.getContactPerson(),
+        sales.getPhone(),
+        sales.getRmb()+"",
+        sales.getDollar()+"",
+        sales.getYears()+"",
+        formatDate(sales.getSaleDate()),
+        sales.getOrganization(),
+        sales.getNation(),
+        sales.getDelegate(),
+        sales.getContactMan(),
+        sales.getInSpectOrg(),
+        sales.isConclusion()?"1":"0",
+        sales.getInspector(),
+        formatDate(sales.getDateInspect()),
+        sales.getId()};
+        try {
+            JDBCutil.executeUpdate(sql, params);
+        }catch (Exception e){
+            b=false;
+        }
+        return b;
     }
 
 
@@ -119,8 +162,7 @@ public class SalesService {
                 sales.setContactPerson(rs.getString(6));
                 sales.setPhone(rs.getString(7));
                 sales.setRmb(rs.getDouble(8));
-                System.out.println(rs.getDouble(8));
-                sales.setDollar(rs.getDouble(9));// TODO
+                sales.setDollar(rs.getDouble(9));
                 sales.setYears(rs.getInt(10));
                 sales.setSaleDate(rs.getDate(11));
                 sales.setOrganization(rs.getString(12));

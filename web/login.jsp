@@ -26,7 +26,7 @@
             <label>username:</label><input name="usr" type="text" style="height: 30px;margin: 10px"><br>
             <label>password:</label><input name="psd" type="password" style="height: 30px;margin: 10px"><br>
             <label>验证码:</label><input name="checkCode" type="text" style="height: 30px;margin: 10px">
-            <img src="/Wed/checkServlet"> <br>
+            <img src="/Wed/check"> <br>
             <input value="login" type="submit" style="height: 30px;margin: 10px;width: 300px"><br>
         </div>
     </form>

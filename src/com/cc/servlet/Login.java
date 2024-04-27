@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-public class LoginServlet extends HttpServlet {
+public class Login extends HttpServlet {
     HashMap<String, String> users = new HashMap<String, String>();
 
     @Override

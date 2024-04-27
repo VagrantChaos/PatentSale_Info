@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>com.cc.servlet.LoginServlet</servlet-class>
+        <servlet-class>com.cc.servlet.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -23,12 +23,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>checkServlet</servlet-name>
-        <servlet-class>com.cc.servlet.CheckServlet</servlet-class>
+        <servlet-name>check</servlet-name>
+        <servlet-class>com.cc.servlet.Check</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>checkServlet</servlet-name>
-        <url-pattern>/checkServlet</url-pattern>
+        <servlet-name>check</servlet-name>
+        <url-pattern>/check</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -51,7 +51,7 @@
 
     <servlet>
         <servlet-name>Logout</servlet-name>
-        <servlet-class>com.cc.servlet.LogoutServlet</servlet-class>
+        <servlet-class>com.cc.servlet.Logout</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
@@ -60,7 +60,7 @@
 
     <servlet>
         <servlet-name>Add</servlet-name>
-        <servlet-class>com.cc.servlet.AddServlet</servlet-class>
+        <servlet-class>com.cc.servlet.Add</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Add</servlet-name>
@@ -69,7 +69,7 @@
 
     <servlet>
         <servlet-name>Update</servlet-name>
-        <servlet-class>com.cc.servlet.UpdateServlet</servlet-class>
+        <servlet-class>com.cc.servlet.Update</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Update</servlet-name>

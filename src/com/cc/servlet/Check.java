@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class CheckServlet extends HttpServlet {
+public class Check extends HttpServlet {
     private static int WIDTH = 60;
     private static int HEIGHT = 20;
 
