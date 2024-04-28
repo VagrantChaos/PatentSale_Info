@@ -100,7 +100,7 @@ public class SalesService {
     public boolean updateSale(Sales sales){
         boolean b = true;
         String sql="UPDATE patentsaleinfo\n" +
-                "SET PatentName = ?,\n" +
+                "SET CertificateNumber=?,PatentName = ?,\n" +
                 "    CompleteDate = ?,\n" +
                 "    BlongOrganization = ?,\n" +
                 "    ContactPerson = ?,\n" +
@@ -118,24 +118,27 @@ public class SalesService {
                 "    Inspector = ?,\n" +
                 "    DateInspect = ?\n" +
                 "WHERE PatentID = ?;";
-        String[] params = {sales.getName(),
-        sales.getCDate(),
-        sales.getBelOrganization(),
-        sales.getContactPerson(),
-        sales.getPhone(),
-        sales.getRmb()+"",
-        sales.getDollar()+"",
-        sales.getYears()+"",
-        formatDate(sales.getSaleDate()),
-        sales.getOrganization(),
-        sales.getNation(),
-        sales.getDelegate(),
-        sales.getContactMan(),
-        sales.getInSpectOrg(),
-        sales.isConclusion()?"1":"0",
-        sales.getInspector(),
-        formatDate(sales.getDateInspect()),
-        sales.getId()};
+        String[] params = {
+                sales.getNumber(),
+                sales.getName(),
+                sales.getCDate(),
+                sales.getBelOrganization(),
+                sales.getContactPerson(),
+                sales.getPhone(),
+                sales.getRmb()+"",
+                sales.getDollar()+"",
+                sales.getYears()+"",
+                formatDate(sales.getSaleDate()),
+                sales.getOrganization(),
+                sales.getNation(),
+                sales.getDelegate(),
+                sales.getContactMan(),
+                sales.getInSpectOrg(),
+                sales.isConclusion()?"1":"0",
+                sales.getInspector(),
+                formatDate(sales.getDateInspect()),
+                sales.getId()
+        };
         try {
             JDBCutil.executeUpdate(sql, params);
         }catch (Exception e){

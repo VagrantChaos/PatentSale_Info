@@ -22,7 +22,7 @@ public class JDBCtest {
 //            System.out.println(rs.getString(7));
 //            System.out.println(rs.getDouble(8));
 //            System.out.println(rs.getDouble(8));
-//            System.out.println(rs.getDouble(9));// TODO
+//            System.out.println(rs.getDouble(9));
 //            System.out.println(rs.getInt(10));
 //            System.out.println(rs.getDate(11));
 //            System.out.println(rs.getString(12));

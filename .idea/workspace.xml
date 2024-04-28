@@ -11,25 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bcc25990-8485-4d5e-bb7e-9a0f220735c8" name="Changes" comment="除了add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/domain/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/domain/Sales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cc/service/SalesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/service/SalesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/CheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/Logout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/SearchData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/SearchData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/servlet/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/servlet/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/test/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/test/Hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/all.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/all.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/searchByID.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/searchByID.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/searchByName.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/searchByName.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/update.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cc/test/JDBCtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/test/JDBCtest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,6 +251,9 @@
       <workItem from="1714149507617" duration="8213000" />
       <workItem from="1714205210592" duration="14706000" />
       <workItem from="1714231847179" duration="9057000" />
+      <workItem from="1714241148764" duration="384000" />
+      <workItem from="1714287963548" duration="879000" />
+      <workItem from="1714293213839" duration="3337000" />
     </task>
     <task id="LOCAL-00001" summary="完成登录的简单处理">
       <option name="closed" value="true" />
