@@ -11,8 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bcc25990-8485-4d5e-bb7e-9a0f220735c8" name="Changes" comment="除了add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/service/SalesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/service/SalesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cc/test/JDBCtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cc/test/JDBCtest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,6 +254,7 @@
       <workItem from="1714241148764" duration="384000" />
       <workItem from="1714287963548" duration="879000" />
       <workItem from="1714293213839" duration="3337000" />
+      <workItem from="1714360255375" duration="4796000" />
     </task>
     <task id="LOCAL-00001" summary="完成登录的简单处理">
       <option name="closed" value="true" />
