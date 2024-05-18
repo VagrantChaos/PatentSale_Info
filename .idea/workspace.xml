@@ -12,7 +12,6 @@
     <list default="true" id="bcc25990-8485-4d5e-bb7e-9a0f220735c8" name="Changes" comment="除了add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/wed/web/js&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/wed&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -255,6 +254,11 @@
       <workItem from="1714287963548" duration="879000" />
       <workItem from="1714293213839" duration="3337000" />
       <workItem from="1714360255375" duration="4796000" />
+      <workItem from="1714630216057" duration="2559000" />
+      <workItem from="1714642063327" duration="10000" />
+      <workItem from="1715501057911" duration="8155000" />
+      <workItem from="1715518017695" duration="127000" />
+      <workItem from="1716019109580" duration="59000" />
     </task>
     <task id="LOCAL-00001" summary="完成登录的简单处理">
       <option name="closed" value="true" />
