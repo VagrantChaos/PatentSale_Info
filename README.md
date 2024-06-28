@@ -17,7 +17,8 @@ Patent transfer registration form, used to register information related to the t
 - IntelliJ IDEA 2023.2.2 (Ultimate Edition)
 
 **structure:**
-![structure](doc/structure.png)
+![structure](doc/structure2.png)
+![index](doc/index.png)
 
 ## To Start With
 1. create a datebase  
